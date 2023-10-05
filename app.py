@@ -8,27 +8,34 @@ import glob
 from gtts import gTTS
 from PIL import Image
 
+# Inicialización del traductor de Google y título de la aplicación
 translator = Translator()
 st.title("Voz y Emoción: Convierte Texto en Audio.")
 
+# Imagen debajo del título
 image = st.image("medidor.jpg", use_container_width=True)
 
+# Crear un directorio temporal si no existe
 try:
     os.mkdir("temp")
 except:
     pass
 
+# Encabezado y descripción de la funcionalidad de la aplicación
 st.subheader("Texto a audio.")
 st.write("""
-La aplicación 'Texto a Audio con Análisis de Sentimiento' te permite convertir texto en archivos de audio de manera rápida y sencilla. Además de esta funcionalidad, la aplicación también es capaz de analizar el sentimiento del texto ingresado, proporcionando una comprensión instantánea de las emociones expresadas en el contenido. Facilita la accesibilidad, la comunicación natural y la interacción inclusiva, lo que la hace ideal tanto para usuarios con discapacidades visuales como para aquellos que desean explorar el análisis de sentimientos en sus textos. ¡Convierte tus palabras en voz y descubre las emociones detrás de cada mensaje!
+La aplicación 'Voz y Emoción: Convierte Texto en Audio.' te permite convertir texto en archivos de audio de manera rápida y sencilla. Además de esta funcionalidad, la aplicación también es capaz de analizar el sentimiento del texto ingresado, proporcionando una comprensión instantánea de las emociones expresadas en el contenido. Facilita la accesibilidad, la comunicación natural y la interacción inclusiva, lo que la hace ideal tanto para usuarios con discapacidades visuales como para aquellos que desean explorar el análisis de sentimientos en sus textos. ¡Convierte tus palabras en voz y descubre las emociones detrás de cada mensaje!
 """)
            
+# Entrada de texto del usuario
 text = st.text_input("Ingrese el texto.")
 
-tld="es"
+# Idioma predeterminado
+tld = "es"
 
 def text_to_speech(text, tld):
-    tts = gTTS(text,"es", tld, slow=False)
+    # Convierte el texto en voz y guarda el archivo MP3 en el directorio "temp"
+    tts = gTTS(text, "es", tld, slow=False)
     try:
         my_file_name = text[0:20]
     except:
@@ -37,10 +44,11 @@ def text_to_speech(text, tld):
     return my_file_name, text
 
 if st.button("Convertir y Analizar"):
+    # Genera el audio y muestra el análisis de sentimientos
     result, output_text = text_to_speech(text, tld)
     audio_file = open(f"temp/{result}.mp3", "rb")
     audio_bytes = audio_file.read()
-    st.markdown(f"## Tú audio:")
+    st.markdown(f"## Tu audio:")
     st.audio(audio_bytes, format="audio/mp3", start_time=0)
     
     translation = translator.translate(text, src="es", dest="en")
@@ -58,6 +66,7 @@ if st.button("Convertir y Analizar"):
         st.write( 'Es un sentimiento Neutral 😐')
 
 def remove_files(n):
+    # Elimina archivos MP3 más antiguos en el directorio "temp"
     mp3_files = glob.glob("temp/*mp3")
     if len(mp3_files) != 0:
         now = time.time()
