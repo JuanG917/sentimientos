@@ -17,7 +17,7 @@ except:
     pass
 
 st.subheader("Texto a audio.")
-st.write('La aplicación 'Texto a Audio con Análisis de Sentimiento' te permite convertir texto en  '  
+st.write('La aplicación Texto a Audio con Análisis de Sentimiento te permite convertir texto en  '  
          'archivos de audio y analizar las emociones en el texto. Facilita la accesibilidad y es útil para  ' 
          ' usuarios con discapacidades visuales y aquellos interesados en el análisis de sentimientos '  
          ' en texto. Convierte tus palabras en voz y descubre emociones detrás de cada mensaje. ')
