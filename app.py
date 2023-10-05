@@ -12,9 +12,6 @@ from PIL import Image
 translator = Translator()
 st.title("Voz y Emoción: Convierte Texto en Audio.")
 
-# Imagen debajo del título
-image = st.image("medidor.jpg", use_container_width=True)
-
 # Crear un directorio temporal si no existe
 try:
     os.mkdir("temp")
