@@ -9,7 +9,7 @@ from gtts import gTTS
 from PIL import Image
 
 translator = Translator()
-st.title("Interfases Multimodales.")
+st.title("Voz y Emoción: Convierte Texto en Audio.")
 
 try:
     os.mkdir("temp")
@@ -17,11 +17,10 @@ except:
     pass
 
 st.subheader("Texto a audio.")
-st.write('Las interfaces de texto a audio son fundamentales en las interfaces multimodales ya que permiten '  
-         'una comunicación más accesible y natural, facilitando la inclusión de personas con discapacidades ' 
-         ' visuales y permitiendo la interacción en situaciones donde no es posible leer texto. Estas interfaces '  
-         ' también impulsan tecnologías emergentes como los asistentes de voz inteligentes, haciendo que la tecnología ' 
-         ' sea más accesible e intuitiva para todos los usuarios')
+st.write('La aplicación 'Texto a Audio con Análisis de Sentimiento' te permite convertir texto en  '  
+         'archivos de audio y analizar las emociones en el texto. Facilita la accesibilidad y es útil para  ' 
+         ' usuarios con discapacidades visuales y aquellos interesados en el análisis de sentimientos '  
+         ' en texto. Convierte tus palabras en voz y descubre emociones detrás de cada mensaje. ')
            
 text = st.text_input("Ingrese el texto.")
 
