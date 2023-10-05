@@ -19,12 +19,9 @@ except:
     pass
 
 st.subheader("Texto a audio.")
-st.write("La aplicación Texto a Audio con Análisis de Sentimiento' 
-te permite convertir texto en archivos de audio de manera rápida y sencilla. Además de esta funcionalidad, 
-la aplicación también es capaz de analizar el sentimiento del texto ingresado, proporcionando una comprensión instantánea de las emociones expresadas en
-el contenido. Facilita la accesibilidad, la comunicación natural y la interacción inclusiva, lo que la hace ideal 
-tanto para usuarios con discapacidades visuales como para aquellos que desean explorar el análisis de sentimientos en sus textos. 
-¡Convierte tus palabras en voz y descubre las emociones detrás de cada mensaje!")
+st.write("""
+La aplicación 'Texto a Audio con Análisis de Sentimiento' te permite convertir texto en archivos de audio de manera rápida y sencilla. Además de esta funcionalidad, la aplicación también es capaz de analizar el sentimiento del texto ingresado, proporcionando una comprensión instantánea de las emociones expresadas en el contenido. Facilita la accesibilidad, la comunicación natural y la interacción inclusiva, lo que la hace ideal tanto para usuarios con discapacidades visuales como para aquellos que desean explorar el análisis de sentimientos en sus textos. ¡Convierte tus palabras en voz y descubre las emociones detrás de cada mensaje!
+""")
            
 text = st.text_input("Ingrese el texto.")
 
